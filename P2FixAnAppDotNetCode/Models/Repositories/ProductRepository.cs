@@ -8,12 +8,14 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
     /// </summary>
     public class ProductRepository : IProductRepository
     {
-        private static List<Product> _products;
+        // Instantiate variable _products outside of constructor
+        private static List<Product> _products = new List<Product>();
 
         public ProductRepository()
         {
-            _products = new List<Product>();
-            GenerateProductData();
+            // Generate data only if list of products is empty
+            if (_products.Count == 0)
+                GenerateProductData();
         }
 
         /// <summary>
