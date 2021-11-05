@@ -80,8 +80,8 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public Product FindProductInCartLines(int productId)
         {
-            // TODO implement the method
-            return null;
+            // Find product matching with given Id
+            return GetCartLineList().Find(x => x.Product.Id == productId).Product;
         }
 
         /// <summary>
