@@ -62,8 +62,8 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
-            return 0.0;
+            // Sum prices of products and multiply by quantity of each
+            return Lines.Sum(x => x.Product.Price * x.Quantity);
         }
 
         /// <summary>
